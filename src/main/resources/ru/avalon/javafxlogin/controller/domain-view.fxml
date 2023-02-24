@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ru.avalon.javafxlogin.controller.DomainController">
+    <TableView fx:id="tableDomain" style="-fx-font-size: 11.0">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="webNameCol" text="Web name" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="nameCol" text="Domain name" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="ipCol" text="IP" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="dateCol" text="Registration date" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="countryCol" text="Country" style="-fx-alignment: CENTER"/>
+        </columns>
+    </TableView>
+</StackPane>
