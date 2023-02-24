@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="ru.avalon.javafxlogin.controller.LoginController">
+
+    <vgap>15</vgap>
+
+    <Label style="-fx-font-size: 25.0; -fx-font-weight: bold">
+        <GridPane.columnIndex>0</GridPane.columnIndex>
+        <GridPane.rowIndex>0</GridPane.rowIndex>
+        Welcome
+    </Label>
+    <Label style="-fx-font-size: 14.0">
+        <GridPane.columnIndex>0</GridPane.columnIndex>
+        <GridPane.rowIndex>1</GridPane.rowIndex>
+        <GridPane.halignment>CENTER</GridPane.halignment>
+        User Name
+    </Label>
+    <TextField fx:id="userName" style="-fx-font-size: 14.0; -fx-min-width: 250">
+        <GridPane.columnIndex>1</GridPane.columnIndex>
+        <GridPane.rowIndex>1</GridPane.rowIndex>
+    </TextField>
+    <Label style="-fx-font-size: 14.0">
+        <GridPane.columnIndex>0</GridPane.columnIndex>
+        <GridPane.rowIndex>2</GridPane.rowIndex>
+        <GridPane.halignment>CENTER</GridPane.halignment>
+        Password
+    </Label>
+    <PasswordField fx:id="password" style="-fx-font-size: 14.0">
+        <GridPane.columnIndex>1</GridPane.columnIndex>
+        <GridPane.rowIndex>2</GridPane.rowIndex>
+    </PasswordField>
+
+    <Button text="Login" onAction="#onLoginButtonClick">
+        <GridPane.columnIndex>1</GridPane.columnIndex>
+        <GridPane.rowIndex>3</GridPane.rowIndex>
+        <GridPane.halignment>RIGHT</GridPane.halignment>
+    </Button>
+
+    <Label fx:id="connectionResult" style="-fx-font-size: 14.0">
+        <GridPane.columnIndex>1</GridPane.columnIndex>
+        <GridPane.rowIndex>4</GridPane.rowIndex>
+        <GridPane.halignment>CENTER</GridPane.halignment>
+    </Label>
+</GridPane>
