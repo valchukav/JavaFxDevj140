@@ -1,7 +1,7 @@
 package ru.avalon.javafxlogin.util;
 
 import lombok.experimental.UtilityClass;
-import ru.avalon.javafxlogin.model.UserService;
+import ru.avalon.javafxlogin.model.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class ConnectionManager {
         if (connection != null) {
             return connection;
         } else {
-            try (InputStream resource = UserService.class.getClassLoader().getResourceAsStream(PROPS)) {
+            try (InputStream resource = Service.class.getClassLoader().getResourceAsStream(PROPS)) {
                 Class.forName("org.apache.derby.jdbc.ClientDriver");
                 Properties properties = new Properties();
                 properties.load(resource);
