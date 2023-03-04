@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.StackPane?>
-<StackPane xmlns="http://javafx.com/javafx"
-           xmlns:fx="http://javafx.com/fxml"
-           fx:controller="ru.avalon.javafxlogin.controller.DomainController">
-    <TableView fx:id="tableDomain" style="-fx-font-size: 11.0">
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="ru.avalon.javafxlogin.controller.DomainController">
+
+    <stylesheets>
+        <URL value="@/css/default.css"/>
+    </stylesheets>
+
+    <vgap>10</vgap>
+
+    <Button text="Change style" onAction="#onChangeStyleButtonClick" layoutY="50">
+        <GridPane.columnIndex>0</GridPane.columnIndex>
+        <GridPane.rowIndex>1</GridPane.rowIndex>
+        <GridPane.halignment>CENTER</GridPane.halignment>
+        <GridPane.valignment>CENTER</GridPane.valignment>
+    </Button>
+
+    <TableView fx:id="tableDomain">
+        <GridPane.columnIndex>0</GridPane.columnIndex>
+        <GridPane.rowIndex>2</GridPane.rowIndex>
+        <GridPane.hgrow>ALWAYS</GridPane.hgrow>
+        <GridPane.vgrow>ALWAYS</GridPane.vgrow>
         <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
         </columnResizePolicy>
         <columns>
-            <TableColumn fx:id="idCol" text="ID" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="webNameCol" text="Web name" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="nameCol" text="Domain name" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="ipCol" text="IP" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="dateCol" text="Registration date" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="countryCol" text="Country" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="idCol" text="ID"/>
+            <TableColumn fx:id="webNameCol" text="Web name"/>
+            <TableColumn fx:id="nameCol" text="Domain name"/>
+            <TableColumn fx:id="ipCol" text="IP"/>
+            <TableColumn fx:id="dateCol" text="Registration date"/>
+            <TableColumn fx:id="countryCol" text="Country"/>
         </columns>
     </TableView>
-</StackPane>
+</GridPane>

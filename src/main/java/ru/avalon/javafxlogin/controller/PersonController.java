@@ -34,6 +34,9 @@ public class PersonController implements Initializable {
     @Getter
     private static PersonTo selectedRow;
 
+    @Getter
+    private static Scene domain;
+
     @FXML
     private TableView<PersonTo> tablePerson;
 
@@ -85,7 +88,7 @@ public class PersonController implements Initializable {
             window.initModality(Modality.APPLICATION_MODAL);
 
             FXMLLoader fxmlLoader = new FXMLLoader(PersonController.class.getResource("domain-view.fxml"));
-            Scene domain = new Scene(fxmlLoader.load(), WIDTH - 150, HEIGHT - 50);
+            domain = new Scene(fxmlLoader.load(), WIDTH - 150, HEIGHT - 50);
 
             window.getIcons().add(new Image("images/title.png"));
             window.setTitle("Domain");
