@@ -63,11 +63,7 @@ public class DomainController implements Initializable {
                 .stream()
                 .noneMatch(style -> style.endsWith("custom.css"));
 
-        if (isDefault) {
-            changeStyle("/css/custom.css");
-        } else {
-            changeStyle("/css/default.css");
-        }
+        changeStyle(isDefault ? "/css/custom.css" : "/css/default.css");
     }
 
     private void changeStyle(String name) {
