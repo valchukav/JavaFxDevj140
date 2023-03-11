@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     public static final int WIDTH = 900;
-    public static final int HEIGHT = 750;
+    public static final int HEIGHT = 650;
 
     @Getter
     private static Stage primaryStage;
@@ -26,6 +26,7 @@ public class Main extends Application {
 
         stage.getIcons().add(new Image("images/title.png"));
         stage.setTitle("JavaFX Welcome");
+        stage.setResizable(false);
         stage.setScene(login);
         stage.show();
     }

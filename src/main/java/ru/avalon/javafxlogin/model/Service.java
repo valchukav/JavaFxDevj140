@@ -27,18 +27,12 @@ public class Service {
     public static boolean checkUser(String userName, String password) {
         if (userName.isEmpty() || password.isEmpty()) return false;
 
-        User user = User.builder().userName(userName).password(password).build();
-
         try (PreparedStatement preparedStatement =
-                     ConnectionManager.getConnection().prepareStatement("select NAME, PASSWORD from APP.USERS where NAME = ?")) {
+                     ConnectionManager.getConnection().prepareStatement("select NAME, PASSWORD from APP.USERS where NAME = ? and PASSWORD = ?")) {
             preparedStatement.setString(1, userName);
+            preparedStatement.setString(2, password);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    return user.equals(User.builder()
-                            .userName(resultSet.getString(1))
-                            .password(resultSet.getString(2))
-                            .build());
-                } else return false;
+                return resultSet.next();
             }
         } catch (SQLException | IOException | ClassNotFoundException e) {
             throw new LoginException(e.getMessage(), e);

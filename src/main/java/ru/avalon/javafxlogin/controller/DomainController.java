@@ -12,6 +12,7 @@ import ru.avalon.javafxlogin.model.Service;
 
 import java.net.URL;
 import java.util.Date;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -52,5 +53,27 @@ public class DomainController implements Initializable {
 
         ObservableList<Domain> domains = FXCollections.observableArrayList(Service.getDomainsSet(PersonController.getSelectedRow().getId()));
         tableDomain.setItems(domains);
+    }
+
+    @FXML
+    protected void onChangeStyleButtonClick() {
+        boolean isDefault = PersonController
+                .getDomain()
+                .getStylesheets()
+                .stream()
+                .noneMatch(style -> style.endsWith("custom.css"));
+
+        changeStyle(isDefault ? "/css/custom.css" : "/css/default.css");
+    }
+
+    private void changeStyle(String name) {
+        PersonController
+                .getDomain()
+                .getStylesheets()
+                .clear();
+        PersonController
+                .getDomain()
+                .getStylesheets()
+                .add(Objects.requireNonNull(DomainController.class.getResource(name)).toExternalForm());
     }
 }

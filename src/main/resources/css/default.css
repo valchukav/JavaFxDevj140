@@ -1,0 +1,36 @@
+.root {
+    -fx-font-family: "Garamond";
+    -fx-background-image: url("/images/back2.jpg");
+    -fx-background-repeat: repeat;
+}
+
+.welcome {
+    -fx-text-fill: #590505;
+    -fx-font-size: 30.0;
+    -fx-font-weight: bold;
+}
+
+Label {
+    -fx-text-fill: #590505;
+    -fx-font-size: 20.0;
+    -fx-font-weight: bold;
+}
+
+Button {
+    -fx-font-size: 16.0;
+}
+
+#userName, #password {
+    -fx-font-size: 16.0;
+    -fx-min-width: 300;
+}
+
+.table-view {
+    -fx-font-size: 16px;
+}
+
+.table-view .table-cell {
+    -fx-font-size: 16px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
